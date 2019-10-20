@@ -1,0 +1,11 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "backend for beerpong app",
+  "main": "app.js",
+  "scripts": {
+    "test": "hello"
+  },
+  "author": "",
+  "license": "ISC"
+}
