@@ -8,13 +8,18 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'new-game', 
+    loadChildren: () => import('./new-game/new-game.module').then(m => m.NewGamePageModule)
+  },
+  {
     path: 'home',
     loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
   },
   {
     path: 'list',
     loadChildren: () => import('./list/list.module').then(m => m.ListPageModule)
-  }
+  },
+  { path: 'new-game', loadChildren: './new-game/new-game.module#NewGamePageModule' }
 ];
 
 @NgModule({

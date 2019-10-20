@@ -17,7 +17,7 @@ export class AppComponent {
       icon: 'home'
     },
     {
-      title: 'List',
+      title: 'Existing Games',
       url: '/list',
       icon: 'list'
     }
