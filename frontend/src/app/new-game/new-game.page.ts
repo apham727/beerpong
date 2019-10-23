@@ -18,8 +18,8 @@ export class NewGamePage implements OnInit {
   }
 
   register(form) {
-    console.log("about to call endpoint");
-    var serverResp = this.http.get("https://localhost:8000/").subscribe(response => console.log(response.toString()));
+    console.log("about to call endpointt");
+    var serverResp = this.http.get("/api/existing_games", { responseType: 'text' }).subscribe(response => console.log(response.toString()));
     this.router.navigateByUrl('home');
   }
 
