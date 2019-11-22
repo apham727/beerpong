@@ -14,3 +14,15 @@ find the port that node is using, and then kill via taskkill <PID>.
 
 To run the Angular application: 
 ionic serve -- --proxy-config proxy.config.json
+
+
+
+
+Installation to Run Locally: 
+- install latest stable version of node
+- install angular CLI via npm install -g @angular/cli
+- install ionic via npm install -g ionic 
+- install nodemon via npm install -g nodemon
+- After installing all tools, run 'npm update' and 'npm install'
+
+
