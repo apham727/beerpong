@@ -22,9 +22,8 @@ app.put("/new_game", (req, res) => {
 });
 
 app.post("/create_new_game", (req, res) => {
-    console.log("request is");
-    console.log(req)
-    console.log(req.body);
+    var newGameName = req.body.name;
+    existing_games.push(newGameName);
     res.status(200).send("suk my pepe 2");
 })
 

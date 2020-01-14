@@ -36,6 +36,7 @@ export class NewGamePage implements OnInit {
 
   register(form) {
     console.log(form.value)
+    console.log(typeof form.value)
     // var serverResp = this.http.get("/api/existing_games", { responseType: 'text' }).subscribe(response => console.log(response.toString()));
     var postResp = this.http.post("/api/create_new_game", form.value, { responseType: 'text' }).subscribe(response => console.log(response.toString()));
     this.router.navigateByUrl('home');
