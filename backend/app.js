@@ -2,7 +2,11 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || "8000";
 const cors = require('cors')
+
+var myParser = require("body-parser");
+app.use(myParser.urlencoded({extended : true}));
 app.use(cors())
+
 
 
 app.get("/", (req, res) => {
@@ -18,7 +22,8 @@ app.put("/new_game", (req, res) => {
 
 app.post("/create_new_game", (req, res) => {
     console.log("request is");
-    console.log(req);
+    console.log(req)
+    console.log(req.body);
     res.status(200).send("suk my pepe 2");
 })
 
