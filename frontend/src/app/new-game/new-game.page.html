@@ -14,9 +14,11 @@
             </div>
             <div padding>
               <ion-item>
-                <ion-input name="name" type="text" placeholder="name of game" ngModel required></ion-input>
+                <ion-input name="gameName" type="text" placeholder="name of game" ngModel required></ion-input>
               </ion-item>
-              
+              <ion-item>
+                <ion-input name="creatorName" type="text" placeholder="your name" ngModel required></ion-input>
+              </ion-item>
             </div>
             <div padding>
               <ion-button size="large" type="submit" [disabled]="form.invalid" expand="block">Register</ion-button>

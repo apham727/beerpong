@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-list',
@@ -7,29 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListPage implements OnInit {
   private selectedItem: any;
-  private icons = [
-    'flask',
-    'wifi',
-    'beer',
-    'football',
-    'basketball',
-    'paper-plane',
-    'american-football',
-    'boat',
-    'bluetooth',
-    'build'
-  ];
-  public items: Array<{ title: string; note: string; icon: string }> = [];
+  public items: Array<{ title: string; queue: Array<String>}> = [];
 
 
-  constructor() {
-    for (let i = 1; i < 11; i++) {
-      this.items.push({
-        title: 'Item ' + i,
-        note: 'This is item #' + i,
-        icon: this.icons[Math.floor(Math.random() * this.icons.length)]
-      });
-    }
+  constructor(private router: Router, private http: HttpClient) {
+
+      this.http.get("http://localhost:8000/existing_games",{ responseType: 'text' }).subscribe(resp => {
+
+      var games = JSON.parse(resp)
+      console.log(games)
+      for (let i = 0; i < games.length; i++) {
+        this.items.push({
+          title: games[i].gameName,
+          queue: games[i].queue
+        });
+      }
+    });
+
+
   }
 
   ngOnInit() {
