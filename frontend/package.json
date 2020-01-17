@@ -29,7 +29,6 @@
     "@ionic/angular": "^4.11.8",
     "cordova-ios": "5.1.1",
     "core-js": "^2.6.11",
-    "ios-deploy": "^1.10.0",
     "rxjs": "^6.5.4",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"
@@ -66,6 +65,7 @@
     "tslint": "~5.15.0",
     "typescript": "~3.4.3"
   },
+  "optionalDependencies": { "ios-deploy": "^1.10.0"},
   "description": "An Ionic project",
   "cordova": {
     "plugins": {
