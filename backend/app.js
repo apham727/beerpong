@@ -51,8 +51,8 @@ app.post("/join_existing_game", (req, res) => {
     console.log(req.body.playerName);
 
     for (let i in existing_games) {
-        if (existing_games[i][gameName] == existingGameName) {
-            existing_games[i][queue].push(playerName);
+        if (existing_games[i]["gameName"] == existingGameName) {
+            existing_games[i]["queue"].push(playerName);
             break;
         }
     }
@@ -66,8 +66,8 @@ app.post("/finish_game", (req, res) => {
     console.log(req.body.playerName);
 
     for (let i in existing_games) {
-        if (existing_games[i][gameName] == existingGameName){
-            existing_games[i][queue].shift();
+        if (existing_games[i]["gameName"] == existingGameName){
+            existing_games[i]["queue"].shift();
             break;
         }
     }
