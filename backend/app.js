@@ -32,8 +32,45 @@ app.post("/create_new_game", (req, res) => {
     console.log(req.body.gameName);
     console.log(req.body.creatorName);
     
+    for (let i in existing_games) {
+        if (existing_games[i] == newGameName){
+            console.log("repeat game creation")
+            res.status(911).send("Repeat Game")
+            break
+        }
+    }
     existing_games.push(createGame(newGameName, creatorName));
     res.status(200).send("suk my pepe 2");
+})
+
+app.post("/join_existing_game", (req, res) => {
+    console.log("received new join request");
+    var existingGameName = req.body.gameName;
+    var playerName = req.body.playerName;
+    console.log(req.body.gameName);
+    console.log(req.body.playerName);
+
+    for (let i in existing_games) {
+        if (existing_games[i][gameName] == existingGameName) {
+            existing_games[i][queue].push(playerName);
+            break;
+        }
+    }
+})
+
+app.post("/finish_game", (req, res) => {
+    console.log("received finish game request");
+    var existingGameName = req.body.gameName;
+    var playerName = req.body.playerName;
+    console.log(req.body.gameName);
+    console.log(req.body.playerName);
+
+    for (let i in existing_games) {
+        if (existing_games[i][gameName] == existingGameName){
+            existing_games[i][queue].shift();
+            break;
+        }
+    }
 })
 
 
