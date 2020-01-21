@@ -63,6 +63,7 @@ export class ListPage implements OnInit {
             }
             console.log(joinData);
             var postResp = this.http.post("http://localhost:8000/join_existing_game", joinData, { responseType: 'text' }).subscribe(response => console.log(response.toString()));
+            window.location.reload();
 
           }
         }
